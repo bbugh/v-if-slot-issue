@@ -1,11 +1,22 @@
 <template>
   <div id="app">
+    <conditional-slot :showSlot="false">
+      {{ example.should.not.be.called }}
+    </conditional-slot>
   </div>
 </template>
 
 <script>
+import ConditionalSlot from './components/ConditionalSlot.vue'
+
 export default {
   name: 'app',
+  components: {
+    ConditionalSlot
+  },
+  data: () => ({
+    example: {}
+  })
 }
 </script>
 
